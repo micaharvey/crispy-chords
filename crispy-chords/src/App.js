@@ -6,9 +6,9 @@ import Routes from "./Routes";
 function App() {
   return (
     <HashRouter basename="/">
-      <Switch>
-        <Routes />
-      </Switch>
+      {/* <Switch> */}
+      <Routes />
+      {/* </Switch> */}
     </HashRouter>
   );
 }

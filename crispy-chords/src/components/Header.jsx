@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Dropdown, Image, Menu } from "semantic-ui-react";
+import { Link } from "react-router-dom";
 
 const Header = () => (
   <Menu fixed="top" inverted className="app-header" style={{ height: "50px" }}>
@@ -18,11 +19,11 @@ const Header = () => (
 
       <Dropdown item simple text="Songs">
         <Dropdown.Menu>
-          <Dropdown.Item as="a" href="/stave">
-            Stave
+          <Dropdown.Item>
+            <Link to="/stave">stave</Link>
           </Dropdown.Item>
-          <Dropdown.Item as="a" href="/chords">
-            Chords
+          <Dropdown.Item>
+            <Link to="/chords">Chords</Link>
           </Dropdown.Item>
           <Dropdown.Divider />
           <Dropdown.Header>Header Item</Dropdown.Header>

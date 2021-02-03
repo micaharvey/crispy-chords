@@ -9,11 +9,11 @@ import Layout from "./components/Layout";
 const Routes = (props) => {
   return (
     <Layout>
-      <Switch>
-        <Route exact path="/" component={FixedMenuLayout} />
-        <Route exact path="/stave" component={Stave} />
-        <Route exact path="/chords" component={Chords} />
-      </Switch>
+      {/* <Switch> */}
+      <Route exact path="/" component={FixedMenuLayout} />
+      <Route path="/stave" component={Stave} />
+      <Route path="/chords" component={Chords} />
+      {/* </Switch> */}
     </Layout>
   );
 };
