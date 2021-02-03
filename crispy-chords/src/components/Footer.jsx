@@ -55,7 +55,11 @@ const Footer = () => (
       </Grid>
 
       <Divider inverted section />
-      <Image centered size="mini" src="/crispy-chords/logo512.png" />
+      <Image
+        centered
+        size="mini"
+        src="https://raw.githubusercontent.com/micaharvey/crispy-chords/main/crispy-chords/public/logo512.png"
+      />
       <List horizontal inverted divided link size="small">
         <List.Item as="a" href="#">
           Site Map

@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 const Header = () => (
   <Menu fixed="top" inverted className="app-header" style={{ height: "50px" }}>
     <Container>
-      <Menu.Item as="a" header>
+      <Menu.Item as="a" href="/" header>
         <Image
           size="mini"
-          src="/crispy-chords/logo192.png"
+          src="https://raw.githubusercontent.com/micaharvey/crispy-chords/main/crispy-chords/public/logo192.png"
           style={{ marginRight: "1.5em" }}
         />
         Crispy Chords
