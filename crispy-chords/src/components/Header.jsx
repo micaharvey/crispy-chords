@@ -20,10 +20,14 @@ const Header = () => (
       <Dropdown item simple text="Songs">
         <Dropdown.Menu>
           <Dropdown.Item>
-            <Link to="/stave">stave</Link>
+            <Link to="/stave">
+              <span style={{ color: "black" }}>Stave</span>
+            </Link>
           </Dropdown.Item>
           <Dropdown.Item>
-            <Link to="/chords">Chords</Link>
+            <Link to="/chords">
+              <span style={{ color: "black" }}>Chords</span>
+            </Link>
           </Dropdown.Item>
           <Dropdown.Divider />
           <Dropdown.Header>Header Item</Dropdown.Header>
