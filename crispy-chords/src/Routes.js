@@ -12,7 +12,8 @@ const Routes = (props) => {
       {/* <Switch> */}
       <Route exact path="/" component={FixedMenuLayout} />
       <Route path="/stave" component={Stave} />
-      <Route path="/chords" component={Chords} />
+      <Route exact path="/chords" component={FixedMenuLayout} />
+      <Route path="/chords/:songName" component={Chords} />
       {/* </Switch> */}
     </Layout>
   );

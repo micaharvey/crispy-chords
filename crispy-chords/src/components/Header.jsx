@@ -19,27 +19,29 @@ const Header = () => (
 
       <Dropdown item simple text="Songs">
         <Dropdown.Menu>
+          <Dropdown.Header>Songs</Dropdown.Header>
+          <Dropdown.Item>
+            <i className="dropdown icon" />
+            <span className="text">Chords</span>
+            <Dropdown.Menu>
+              <Dropdown.Item>
+                <Link to="/chords/headlights">
+                  <span style={{ color: "black" }}>Headlights</span>
+                </Link>
+              </Dropdown.Item>
+              <Dropdown.Item>
+                <Link to="/chords/dont-panic">
+                  <span style={{ color: "black" }}>Don't Panic</span>
+                </Link>
+              </Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown.Item>
+          <Dropdown.Divider />
           <Dropdown.Item>
             <Link to="/stave">
               <span style={{ color: "black" }}>Stave</span>
             </Link>
           </Dropdown.Item>
-          <Dropdown.Item>
-            <Link to="/chords">
-              <span style={{ color: "black" }}>Chords</span>
-            </Link>
-          </Dropdown.Item>
-          <Dropdown.Divider />
-          <Dropdown.Header>Header Item</Dropdown.Header>
-          <Dropdown.Item>
-            <i className="dropdown icon" />
-            <span className="text">Submenu</span>
-            <Dropdown.Menu>
-              <Dropdown.Item>List Item</Dropdown.Item>
-              <Dropdown.Item>List Item</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown.Item>
-          <Dropdown.Item>List Item</Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
     </Container>
