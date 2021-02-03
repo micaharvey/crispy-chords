@@ -1,23 +1,24 @@
 {
   "files": {
-    "main.css": "/crispy-chords/static/css/main.8c8b27cf.chunk.css",
-    "main.js": "/crispy-chords/static/js/main.bad78171.chunk.js",
-    "main.js.map": "/crispy-chords/static/js/main.bad78171.chunk.js.map",
-    "runtime-main.js": "/crispy-chords/static/js/runtime-main.9a555ba7.js",
-    "runtime-main.js.map": "/crispy-chords/static/js/runtime-main.9a555ba7.js.map",
-    "static/js/2.5aeaa61a.chunk.js": "/crispy-chords/static/js/2.5aeaa61a.chunk.js",
-    "static/js/2.5aeaa61a.chunk.js.map": "/crispy-chords/static/js/2.5aeaa61a.chunk.js.map",
-    "static/js/3.7ee8d8eb.chunk.js": "/crispy-chords/static/js/3.7ee8d8eb.chunk.js",
-    "static/js/3.7ee8d8eb.chunk.js.map": "/crispy-chords/static/js/3.7ee8d8eb.chunk.js.map",
+    "main.css": "/crispy-chords/static/css/main.38f62b72.chunk.css",
+    "main.js": "/crispy-chords/static/js/main.0c81a0b4.chunk.js",
+    "main.js.map": "/crispy-chords/static/js/main.0c81a0b4.chunk.js.map",
+    "runtime-main.js": "/crispy-chords/static/js/runtime-main.cd453066.js",
+    "runtime-main.js.map": "/crispy-chords/static/js/runtime-main.cd453066.js.map",
+    "static/js/2.beb6dd48.chunk.js": "/crispy-chords/static/js/2.beb6dd48.chunk.js",
+    "static/js/2.beb6dd48.chunk.js.map": "/crispy-chords/static/js/2.beb6dd48.chunk.js.map",
+    "static/js/3.28b7866c.chunk.js": "/crispy-chords/static/js/3.28b7866c.chunk.js",
+    "static/js/3.28b7866c.chunk.js.map": "/crispy-chords/static/js/3.28b7866c.chunk.js.map",
     "index.html": "/crispy-chords/index.html",
-    "static/css/main.8c8b27cf.chunk.css.map": "/crispy-chords/static/css/main.8c8b27cf.chunk.css.map",
-    "static/js/2.5aeaa61a.chunk.js.LICENSE.txt": "/crispy-chords/static/js/2.5aeaa61a.chunk.js.LICENSE.txt",
+    "static/css/main.38f62b72.chunk.css.map": "/crispy-chords/static/css/main.38f62b72.chunk.css.map",
+    "static/js/2.beb6dd48.chunk.js.LICENSE.txt": "/crispy-chords/static/js/2.beb6dd48.chunk.js.LICENSE.txt",
+    "static/media/Headlights.72f78d83.bin": "/crispy-chords/static/media/Headlights.72f78d83.bin",
     "static/media/logo.6ce24c58.svg": "/crispy-chords/static/media/logo.6ce24c58.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.9a555ba7.js",
-    "static/js/2.5aeaa61a.chunk.js",
-    "static/css/main.8c8b27cf.chunk.css",
-    "static/js/main.bad78171.chunk.js"
+    "static/js/runtime-main.cd453066.js",
+    "static/js/2.beb6dd48.chunk.js",
+    "static/css/main.38f62b72.chunk.css",
+    "static/js/main.0c81a0b4.chunk.js"
   ]
 }
