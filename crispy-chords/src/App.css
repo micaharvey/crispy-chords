@@ -24,8 +24,10 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.song {
+  font-family: 'Courier New', monospace;
+  font-size: 16pt;
+  text-align: left;
 }
 
 @keyframes App-logo-spin {
