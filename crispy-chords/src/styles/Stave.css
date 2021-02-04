@@ -1,0 +1,39 @@
+.Stave {
+  margin: 10px 40px;
+}
+
+@keyframes greenColorChange {
+  0% {
+    color: lightgreen;
+  }
+  33% {
+    color: green;
+  }
+  66% {
+    color: darkgreen;
+  }
+  100% {
+    color: black;
+  }
+}
+
+@keyframes redColorChange {
+  0% {
+    color: red;
+  }
+  100% {
+    color: black;
+  }
+}
+
+.correct-changing {
+  animation: greenColorChange 1.66s;
+}
+
+.incorrect-changing {
+  animation: redColorChange 1.66s;
+}
+
+.hide {
+  display: none;
+}

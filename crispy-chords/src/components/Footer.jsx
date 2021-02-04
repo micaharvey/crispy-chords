@@ -19,38 +19,44 @@ const Footer = () => (
     <Container textAlign="center">
       <Grid divided inverted stackable>
         <Grid.Column width={3}>
-          <Header inverted as="h4" content="Group 1" />
+          <Header inverted as="h4" content="Great Guitar Chord Sites" />
           <List link inverted>
-            <List.Item as="a">Link One</List.Item>
-            <List.Item as="a">Link Two</List.Item>
-            <List.Item as="a">Link Three</List.Item>
-            <List.Item as="a">Link Four</List.Item>
+            <List.Item as="a" href="https://www.heartwoodguitar.com/chords/">
+              Heartwood Guitar
+            </List.Item>
+            <List.Item as="a" href="https://www.justinguitar.com/songs/">
+              Justin Guitar
+            </List.Item>
           </List>
         </Grid.Column>
         <Grid.Column width={3}>
-          <Header inverted as="h4" content="Group 2" />
+          <Header inverted as="h4" content="Discover More" />
           <List link inverted>
-            <List.Item as="a">Link One</List.Item>
-            <List.Item as="a">Link Two</List.Item>
-            <List.Item as="a">Link Three</List.Item>
-            <List.Item as="a">Link Four</List.Item>
+            <List.Item as="a" href="https://micaharvey.github.io/homepage">
+              Micah Synth
+            </List.Item>
+            <List.Item as="a" href="https://www.micaharvey.com">
+              Micah's Home Page
+            </List.Item>
           </List>
         </Grid.Column>
         <Grid.Column width={3}>
-          <Header inverted as="h4" content="Group 3" />
+          <Header inverted as="h4" content="Fun Games" />
           <List link inverted>
-            <List.Item as="a">Link One</List.Item>
-            <List.Item as="a">Link Two</List.Item>
-            <List.Item as="a">Link Three</List.Item>
-            <List.Item as="a">Link Four</List.Item>
+            <List.Item as="a" href="https://game-game.com/186240/">
+              Dice Wars
+            </List.Item>
+            <List.Item
+              as="a"
+              href="https://arcadespot.com/game/super-buster-bros/"
+            >
+              Super Buster Bros
+            </List.Item>
           </List>
         </Grid.Column>
         <Grid.Column width={7}>
-          <Header inverted as="h4" content="Footer Header" />
-          <p>
-            Extra space for a call to action inside the footer that could help
-            re-engage users.
-          </p>
+          <Header inverted as="h4" content="Thanks for Dropping by!" />
+          <p>I hope you have a wonderful journey.</p>
         </Grid.Column>
       </Grid>
 
@@ -62,16 +68,16 @@ const Footer = () => (
       />
       <List horizontal inverted divided link size="small">
         <List.Item as="a" href="#">
-          Site Map
+          Is this
         </List.Item>
         <List.Item as="a" href="#">
-          Contact Us
+          the real life?
         </List.Item>
         <List.Item as="a" href="#">
-          Terms and Conditions
+          Is this
         </List.Item>
         <List.Item as="a" href="#">
-          Privacy Policy
+          just fantasy?
         </List.Item>
       </List>
     </Container>

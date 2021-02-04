@@ -1,84 +1,149 @@
 import React, { useState } from "react";
 import Vex from "vexflow";
+import "../styles/Stave.css";
 
 function Stave() {
-  const [note, setNote] = useState("");
+  let note = "c";
+  let VF;
+  let context;
+  let stave;
+  let group;
+  const [message, setMessage] = useState("Type the note on your keyboard");
 
-  const onLoad = () => {
-    const vf = new Vex.Flow.Factory({
-      renderer: { elementId: "boo", width: 500, height: 250 },
-    });
-
-    const score = vf.EasyScore();
-    const system = vf.System();
-
-    system
-      .addStave({
-        voices: [
-          score.voice(
-            score.notes("C#5/q, B4, A4, G#4", {
-              stem: "up",
-            })
-          ),
-          score.voice(score.notes("C#4/h, C#4", { stem: "down" })),
-        ],
-      })
-      .addClef("treble")
-      .addTimeSignature("4/4");
-
-    system
-      .addStave({
-        voices: [
-          score.voice(
-            score.notes("C#3/q, B2, A2/8, B2, C#3, D3", {
-              clef: "bass",
-              stem: "up",
-            })
-          ),
-          score.voice(
-            score.notes("C#2/h, C#2", { clef: "bass", stem: "down" })
-          ),
-        ],
-      })
-      .addClef("bass")
-      .addTimeSignature("4/4");
-
-    system.addConnector();
-
-    vf.draw();
+  const getRandomNote = () => {
+    const noteNames = ["a", "b", "c", "d", "e", "f", "g"];
+    const rand = Math.random();
+    const index = Math.floor(rand * noteNames.length);
+    return noteNames[index];
   };
+
+  const checkInput = (k) => {
+    if (k !== note) {
+      playIncorrectNoteMessage();
+      return;
+    }
+
+    playCorrectNoteMessage();
+    // remove the previously drawn note
+    context.svg.removeChild(group);
+
+    const newRawNote = getRandomNote();
+    note = newRawNote;
+    const newNote = newRawNote + "/4";
+
+    let notes = [
+      new VF.StaveNote({
+        clef: "treble",
+        keys: [newNote],
+        duration: "w",
+      }),
+    ];
+
+    // render notes inside svg group
+    group = context.openGroup();
+    VF.Formatter.FormatAndDraw(context, stave, notes);
+    context.closeGroup();
+  };
+
+  const cleanupIntro = () => {
+    document.querySelector("#startButton").className = "hide";
+    document.querySelector(".message").className = "message";
+  };
+
+  const initKeyboardCapture = () => {
+    document.addEventListener("keydown", function (e) {
+      switch (e.key) {
+        case "a":
+        case "b":
+        case "c":
+        case "d":
+        case "e":
+        case "f":
+        case "g":
+          e.preventDefault();
+          checkInput(e.key);
+          break;
+        default:
+          playIncorrectNoteMessage();
+      }
+    });
+  };
+
+  const initGameOnLoad = () => {
+    cleanupIntro();
+    initKeyboardCapture();
+
+    VF = Vex.Flow;
+
+    // Create an SVG renderer and attach it to the DIV element named "vexFlowElement".
+    const div = document.getElementById("vexFlowElement");
+    const renderer = new VF.Renderer(div, VF.Renderer.Backends.SVG);
+
+    // Configure the rendering context.
+    renderer.resize(500, 500);
+    context = renderer.getContext();
+    context.setFont("Arial", 10, "").setBackgroundFillStyle("#eed");
+
+    // Create a stave of width 400 at position 10, 40 on the canvas.
+    stave = new VF.Stave(10, 40, 400);
+    // Add a clef and time signature.
+    stave.addClef("treble").addTimeSignature("4/4");
+    // Connect it to the rendering context and draw!
+    stave.setContext(context).draw();
+
+    // add our starting note to the stave
+    const startingNote = note + "/4";
+    var notes = [
+      new VF.StaveNote({ clef: "treble", keys: [startingNote], duration: "w" }),
+    ];
+
+    // render notes inside svg group
+    group = context.openGroup();
+    VF.Formatter.FormatAndDraw(context, stave, notes);
+    context.closeGroup();
+  };
+
+  // window.onload = (e) => {
+  //   initGameOnLoad();
+  // };
+
+  function playCorrectNoteMessage() {
+    setMessage("Correct!");
+    document.querySelector(".message").className = "message";
+    window.requestAnimationFrame(function (time) {
+      window.requestAnimationFrame(function (time) {
+        document.querySelector(".message").className =
+          "message correct-changing";
+      });
+    });
+  }
+
+  function playIncorrectNoteMessage() {
+    setMessage("Try again");
+    document.querySelector(".message").className = "message";
+    window.requestAnimationFrame(function (time) {
+      window.requestAnimationFrame(function (time) {
+        document.querySelector(".message").className =
+          "message incorrect-changing";
+      });
+    });
+  }
 
   return (
     <div className="Stave">
-      <span style={{ color: "blue" }}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
-      </span>
-      <p onClick={() => onLoad()}>Stave</p>
-      <span style={{ color: "blue" }}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
-      </span>
-      <span style={{ color: "blue" }}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
-      </span>
-      <div id="boo"></div>
+      <h1>Name that note!</h1>
+      <button
+        id="startButton"
+        onClick={() => {
+          initGameOnLoad();
+        }}
+      >
+        Click Here to begin
+      </button>
+      <h3 className="message hide" style={{ margin: "0 40px" }}>
+        {message}
+      </h3>
+      <div id="vexFlowElement"></div>
     </div>
   );
 }

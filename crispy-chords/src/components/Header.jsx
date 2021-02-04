@@ -13,37 +13,30 @@ const Header = () => (
         />
         Crispy Chords
       </Menu.Item>
-      <Menu.Item as="a" href="/">
-        Home
-      </Menu.Item>
-
       <Dropdown item simple text="Songs">
         <Dropdown.Menu>
-          <Dropdown.Header>Songs</Dropdown.Header>
           <Dropdown.Item>
-            <i className="dropdown icon" />
-            <span className="text">Chords</span>
-            <Dropdown.Menu>
-              <Dropdown.Item>
-                <Link to="/chords/headlights">
-                  <span style={{ color: "black" }}>Headlights</span>
-                </Link>
-              </Dropdown.Item>
-              <Dropdown.Item>
-                <Link to="/chords/dont-panic">
-                  <span style={{ color: "black" }}>Don't Panic</span>
-                </Link>
-              </Dropdown.Item>
-            </Dropdown.Menu>
+            <Link to="/chords/headlights">
+              <span style={{ color: "black" }}>Headlights</span>
+            </Link>
           </Dropdown.Item>
-          <Dropdown.Divider />
           <Dropdown.Item>
-            <Link to="/stave">
-              <span style={{ color: "black" }}>Stave</span>
+            <Link to="/chords/dont-panic">
+              <span style={{ color: "black" }}>Don't Panic</span>
+            </Link>
+          </Dropdown.Item>
+          <Dropdown.Item>
+            <Link to="/chords/dont-think-twice">
+              <span style={{ color: "black" }}>
+                Don't Think Twice It's Alright
+              </span>
             </Link>
           </Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
+      <Menu.Item as="a" href="/#/stave">
+        Game
+      </Menu.Item>
     </Container>
   </Menu>
 );
