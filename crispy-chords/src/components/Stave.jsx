@@ -1,8 +1,10 @@
 import React from "react";
-import { Piano } from "@tonejs/piano";
-import { Button, Card } from "semantic-ui-react";
+// import { Piano } from "@tonejs/piano";
+import webmidi from "webmidi";
+import { Button } from "semantic-ui-react";
 import Vex from "vexflow";
 import "../styles/Stave.css";
+import MIDISounds from "midi-sounds-react";
 
 const noteToMidi = {
   a: 69,
@@ -22,14 +24,19 @@ const noteToMidi = {
 };
 
 function Stave() {
+  let midiSounds;
   let note = "c";
   let VF;
   let context;
   let stave;
   let group;
-  let pianoLoaded = false;
-  let piano;
+  // let pianoLoaded = false;
+  // let piano;
   const message = "Select the correct note";
+
+  const playNote = () => {
+    midiSounds.playChordNow(0, [noteToMidi[note]], 0.5);
+  };
 
   const getRandomNote = () => {
     const noteNames = ["a", "b", "c", "d", "e", "f", "g"];
@@ -39,14 +46,14 @@ function Stave() {
   };
 
   const checkInput = (k) => {
-    console.log(k);
-    console.log(VF, stave, context);
     if (k.toLowerCase() !== note.toLowerCase()) {
       playIncorrectNoteMessage();
       return;
     }
 
+    // Congrats!
     playCorrectNoteMessage();
+
     // remove the previously drawn note
     context.svg.removeChild(group);
 
@@ -87,35 +94,60 @@ function Stave() {
     });
   };
 
-  const initPiano = () => {
-    // hide the start button
-    document.querySelector("#startButton").className = "hide";
-    document.querySelector(".loader").className = "loader";
-    window.requestAnimationFrame(function (time) {
-      window.requestAnimationFrame(function (time) {
-        document.querySelector(".loader").className = "loader loading";
-      });
-    });
+  // const initPiano = () => {
+  //   window.requestAnimationFrame(function (time) {
+  //     window.requestAnimationFrame(function (time) {
+  //       document.querySelector(".loader").className = "loader loading";
+  //     });
+  //   });
 
-    piano = new Piano({
-      velocities: 5,
-    });
+  //   piano = new Piano({
+  //     velocities: 5,
+  //   });
 
-    // Connect piano to speaker output
-    piano.toDestination();
+  //   // Connect piano to speaker output
+  //   piano.toDestination();
 
-    piano.load().then(() => {
-      // console.log("Piano Loaded");
-      pianoLoaded = true;
-      document.querySelector(".loader").className = "loader hide";
-      initGameOnLoad();
-    });
+  //   piano.load().then(() => {
+  //     // console.log("Piano Loaded");
+  //     pianoLoaded = true;
+  //     document.querySelector(".loader").className = "loader hide";
+  //     initGameOnLoad();
+  //   });
+  // };
+
+  const setMidiSoundsVolume = () => {
+    midiSounds.setEchoLevel(0);
+    midiSounds.setMasterVolume(0.3);
   };
 
   const initGameOnLoad = () => {
     document.querySelector(".message").className = "message";
+    document.querySelector("#startButton").className = "hide";
+    document.querySelector(".loader").className = "loader hide";
     document.querySelector(".buttonKeyboard").className = "buttonKeyboard";
+
     initKeyboardCapture();
+    setMidiSoundsVolume();
+
+    // enable web midi
+    webmidi.enable(function (err) {
+      if (err) {
+        console.log("WebMidi could not be enabled.", err);
+      } else {
+        console.log("WebMidi enabled!");
+      }
+
+      const input = webmidi.inputs[0];
+
+      // Listen for a 'note on' message on all channels
+      input.addListener("noteon", "all", function (e) {
+        checkInput(e.note.name);
+        console.log(
+          "Received 'noteon' message (" + e.note.name + e.note.octave + ")."
+        );
+      });
+    });
 
     VF = Vex.Flow;
 
@@ -148,14 +180,18 @@ function Stave() {
   };
 
   function playCorrectNoteMessage() {
-    if (pianoLoaded) {
-      // play the note and release in half a second
-      piano.keyDown({ midi: noteToMidi[note], velocity: 0.33 });
-      piano.keyUp({ midi: noteToMidi[note], time: "+0.5" });
-    }
+    // if (pianoLoaded) {
+    //   // play the note and release in half a second
+    //   piano.keyDown({ midi: noteToMidi[note], velocity: 0.33 });
+    //   piano.keyUp({ midi: noteToMidi[note], time: "+0.5" });
+    // }
 
     // update the message and play the animation
     // setMessage("Correct!");
+
+    // play the note
+    playNote();
+
     document.querySelector(".message").className = "message";
     window.requestAnimationFrame(function (time) {
       window.requestAnimationFrame(function (time) {
@@ -188,7 +224,7 @@ function Stave() {
       <Button
         id="startButton"
         onClick={() => {
-          initPiano();
+          initGameOnLoad();
         }}
       >
         Click Here to begin
@@ -198,6 +234,13 @@ function Stave() {
       </h3>
       <div className="loader hide"></div>
       <div id="vexFlowElement"></div>
+      <div className="hide">
+        <MIDISounds
+          ref={(ref) => (midiSounds = ref)}
+          appElementName="root"
+          instruments={[3]}
+        />
+      </div>
       <div className="buttonKeyboard hide">
         <Button
           onClick={(e) => {
