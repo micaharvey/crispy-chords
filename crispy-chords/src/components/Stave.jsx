@@ -130,6 +130,11 @@ function Stave() {
     initKeyboardCapture();
     setMidiSoundsVolume();
 
+    // load piano
+    midiSounds.player.loader.waitLoad(function () {
+      console.log("me load");
+    });
+
     // enable web midi
     webmidi.enable(function (err) {
       if (err) {
@@ -138,15 +143,18 @@ function Stave() {
         console.log("WebMidi enabled!");
       }
 
-      const input = webmidi.inputs[0];
+      const len = webmidi.inputs.length;
+      if (len > 0) {
+        const input = webmidi.inputs[0];
 
-      // Listen for a 'note on' message on all channels
-      input.addListener("noteon", "all", function (e) {
-        checkInput(e.note.name);
-        console.log(
-          "Received 'noteon' message (" + e.note.name + e.note.octave + ")."
-        );
-      });
+        // Listen for a 'note on' message on all channels
+        input.addListener("noteon", "all", function (e) {
+          checkInput(e.note.name);
+          console.log(
+            "Received 'noteon' message (" + e.note.name + e.note.octave + ")."
+          );
+        });
+      }
     });
 
     VF = Vex.Flow;
@@ -238,7 +246,7 @@ function Stave() {
         <MIDISounds
           ref={(ref) => (midiSounds = ref)}
           appElementName="root"
-          instruments={[3]}
+          instruments={[0]}
         />
       </div>
       <div className="buttonKeyboard hide">

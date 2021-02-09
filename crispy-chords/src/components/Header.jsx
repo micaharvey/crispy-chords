@@ -1,6 +1,5 @@
 import React from "react";
 import { Container, Dropdown, Image, Menu } from "semantic-ui-react";
-import { Link } from "react-router-dom";
 
 const Header = () => (
   <Menu fixed="top" inverted className="app-header" style={{ height: "50px" }}>
@@ -15,27 +14,24 @@ const Header = () => (
       </Menu.Item>
       <Dropdown item simple text="Songs">
         <Dropdown.Menu>
-          <Dropdown.Item>
-            <Link to="/chords/headlights">
-              <span style={{ color: "black" }}>Headlights</span>
-            </Link>
+          <Dropdown.Item as="a" href="#/chords/headlights">
+            <span style={{ color: "black" }}>Headlights</span>
           </Dropdown.Item>
-          <Dropdown.Item>
-            <Link to="/chords/dont-panic">
-              <span style={{ color: "black" }}>Don't Panic</span>
-            </Link>
+          <Dropdown.Item as="a" href="#/chords/dont-panic">
+            <span style={{ color: "black" }}>Don't Panic</span>
           </Dropdown.Item>
-          <Dropdown.Item>
-            <Link to="/chords/dont-think-twice">
-              <span style={{ color: "black" }}>
-                Don't Think Twice It's Alright
-              </span>
-            </Link>
+          <Dropdown.Item as="a" href="#/chords/dont-think-twice">
+            <span style={{ color: "black" }}>
+              Don't Think Twice It's Alright
+            </span>
           </Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
       <Menu.Item as="a" href="/#/stave">
         Game
+      </Menu.Item>
+      <Menu.Item as="a" href="/#/piano">
+        Piano
       </Menu.Item>
     </Container>
   </Menu>
