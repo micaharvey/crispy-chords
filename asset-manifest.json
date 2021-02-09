@@ -1,29 +1,29 @@
 {
   "files": {
-    "main.css": "/static/css/main.4e74a44a.chunk.css",
-    "main.js": "/static/js/main.2ec688fe.chunk.js",
-    "main.js.map": "/static/js/main.2ec688fe.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.351fc9ff.js",
-    "runtime-main.js.map": "/static/js/runtime-main.351fc9ff.js.map",
+    "main.css": "/static/css/main.7ffab0f0.chunk.css",
+    "main.js": "/static/js/main.fae74a77.chunk.js",
+    "main.js.map": "/static/js/main.fae74a77.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.3f0e2f59.js",
+    "runtime-main.js.map": "/static/js/runtime-main.3f0e2f59.js.map",
     "static/css/2.85f7760d.chunk.css": "/static/css/2.85f7760d.chunk.css",
-    "static/js/2.fe49a067.chunk.js": "/static/js/2.fe49a067.chunk.js",
-    "static/js/2.fe49a067.chunk.js.map": "/static/js/2.fe49a067.chunk.js.map",
-    "static/js/3.3b1a8a18.chunk.js": "/static/js/3.3b1a8a18.chunk.js",
-    "static/js/3.3b1a8a18.chunk.js.map": "/static/js/3.3b1a8a18.chunk.js.map",
+    "static/js/2.98991d59.chunk.js": "/static/js/2.98991d59.chunk.js",
+    "static/js/2.98991d59.chunk.js.map": "/static/js/2.98991d59.chunk.js.map",
+    "static/js/3.d318dee5.chunk.js": "/static/js/3.d318dee5.chunk.js",
+    "static/js/3.d318dee5.chunk.js.map": "/static/js/3.d318dee5.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.85f7760d.chunk.css.map": "/static/css/2.85f7760d.chunk.css.map",
-    "static/css/main.4e74a44a.chunk.css.map": "/static/css/main.4e74a44a.chunk.css.map",
-    "static/js/2.fe49a067.chunk.js.LICENSE.txt": "/static/js/2.fe49a067.chunk.js.LICENSE.txt",
+    "static/css/main.7ffab0f0.chunk.css.map": "/static/css/main.7ffab0f0.chunk.css.map",
+    "static/js/2.98991d59.chunk.js.LICENSE.txt": "/static/js/2.98991d59.chunk.js.LICENSE.txt",
     "static/media/Dont Panic - Coldplay.9155fc63.bin": "/static/media/Dont Panic - Coldplay.9155fc63.bin",
     "static/media/Dont Think Twice Its Alright - Bob Dylan.34ba777f.bin": "/static/media/Dont Think Twice Its Alright - Bob Dylan.34ba777f.bin",
     "static/media/Headlights.72f78d83.bin": "/static/media/Headlights.72f78d83.bin",
     "static/media/semantic.min.css": "/static/media/outline-icons.ddae9b1b.woff"
   },
   "entrypoints": [
-    "static/js/runtime-main.351fc9ff.js",
+    "static/js/runtime-main.3f0e2f59.js",
     "static/css/2.85f7760d.chunk.css",
-    "static/js/2.fe49a067.chunk.js",
-    "static/css/main.4e74a44a.chunk.css",
-    "static/js/main.2ec688fe.chunk.js"
+    "static/js/2.98991d59.chunk.js",
+    "static/css/main.7ffab0f0.chunk.css",
+    "static/js/main.fae74a77.chunk.js"
   ]
 }
