@@ -4,6 +4,7 @@ import "./App.css";
 import Chords from "./components/Chords";
 import Stave from "./components/Stave";
 import PianoExample from "./components/Piano";
+import Sequencer from "./components/Sequencer";
 import Homepage from "./components/Homepage";
 import Layout from "./components/Layout";
 
@@ -15,6 +16,7 @@ const Routes = (props) => {
       <Route path="/chords/:songName" component={Chords} />
       <Route path="/stave" component={Stave} />
       <Route path="/piano" component={PianoExample} />
+      <Route path="/sequencer" component={Sequencer} />
     </Layout>
   );
 };

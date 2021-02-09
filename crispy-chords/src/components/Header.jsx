@@ -33,6 +33,9 @@ const Header = () => (
       <Menu.Item as="a" href="/#/piano">
         Piano
       </Menu.Item>
+      <Menu.Item as="a" href="/#/sequencer">
+        Sequencer
+      </Menu.Item>
     </Container>
   </Menu>
 );

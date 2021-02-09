@@ -2,6 +2,14 @@ import React, { Component } from "react";
 import MIDISounds from "midi-sounds-react";
 import "../styles/Piano.css";
 
+// todo: allow stop all sounds with cancelQueue()
+// todo: time with contextTime()
+/*
+var bpm = 120;
+var N = 4 * 60 / bpm;
+var duration16th = N/16;
+*/
+
 const STYLE = {
   keyWhite: {
     backgroundColor: "#dddddd",
@@ -322,6 +330,7 @@ class PianoExample extends Component {
       input = inputs.next()
     ) {
       input.value.onmidimessage = this.midiOnMIDImessage.bind(this);
+      document.querySelector(".midi-message").className = "midi-message";
     }
     midi.onstatechange = this.onMIDIOnStateChange.bind(this);
   }
@@ -380,7 +389,7 @@ class PianoExample extends Component {
         <p className="piano-message">
           Click the Piano, press your keyboard, or play a MIDI instrument
         </p>
-        <p>{this.state.status}</p>
+        <p className="midi-message hide">{this.state.status}</p>
         <table align="center">
           <tbody>
             <tr>
