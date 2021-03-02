@@ -7,6 +7,8 @@ const FixedMenuLayout = () => (
       <Header as="h1">Welcome to Crispy Chords</Header>
       <p>
         This is a closely curated collection of chords to my favorite songs.
+        Keyboard pianos, sequencers, and music theory games also find their home
+        here.
       </p>
       <p>Music is awesome. Make some.</p>
     </Container>

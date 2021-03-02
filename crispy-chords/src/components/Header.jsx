@@ -39,6 +39,9 @@ const Header = () => (
           <Dropdown.Item as="a" href="#/chords/laundry-room">
             <span style={{ color: "black" }}>Laundry Room</span>
           </Dropdown.Item>
+          <Dropdown.Item as="a" href="#/tab/never-going-back">
+            <span style={{ color: "black" }}>Never Going Back Again</span>
+          </Dropdown.Item>
           <Dropdown.Item as="a" href="#/chords/new-slang">
             <span style={{ color: "black" }}>New Slang</span>
           </Dropdown.Item>
