@@ -41,16 +41,13 @@ const Footer = () => (
           </List>
         </Grid.Column>
         <Grid.Column width={3}>
-          <Header inverted as="h4" content="Fun Games" />
+          <Header inverted as="h4" content="Free Music Software" />
           <List link inverted>
-            <List.Item as="a" href="https://game-game.com/186240/">
-              Dice Wars
+            <List.Item as="a" href="https://musescore.com/">
+              Muse Score
             </List.Item>
-            <List.Item
-              as="a"
-              href="https://arcadespot.com/game/super-buster-bros/"
-            >
-              Super Buster Bros
+            <List.Item as="a" href="http://reaper.fm/">
+              Reaper DAW
             </List.Item>
           </List>
         </Grid.Column>
@@ -67,16 +64,16 @@ const Footer = () => (
         src="https://raw.githubusercontent.com/micaharvey/crispy-chords/main/crispy-chords/public/logo512.png"
       />
       <List horizontal inverted divided link size="small">
-        <List.Item as="a" href="#">
+        <List.Item as="a" href="https://www.youtube.com/watch?v=fJ9rUzIMcZQ">
           Is this
         </List.Item>
-        <List.Item as="a" href="#">
+        <List.Item as="a" href="https://www.youtube.com/watch?v=fJ9rUzIMcZQ">
           the real life?
         </List.Item>
-        <List.Item as="a" href="#">
+        <List.Item as="a" href="https://www.youtube.com/watch?v=fJ9rUzIMcZQ">
           Is this
         </List.Item>
-        <List.Item as="a" href="#">
+        <List.Item as="a" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
           just fantasy?
         </List.Item>
       </List>
