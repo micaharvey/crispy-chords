@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Header } from "semantic-ui-react";
+import { Container, Header, Image } from "semantic-ui-react";
 
 const FixedMenuLayout = () => (
   <div>
@@ -11,6 +11,11 @@ const FixedMenuLayout = () => (
         here.
       </p>
       <p>Music is awesome. Make some.</p>
+      <Image
+        centered
+        size="large"
+        src="https://raw.githubusercontent.com/micaharvey/crispy-chords/main/crispy-chords/public/logo512.png"
+      />
     </Container>
   </div>
 );
